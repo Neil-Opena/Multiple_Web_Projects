@@ -8,7 +8,7 @@ var colors = [
 ]
 
 var squares = document.querySelectorAll(".square");
-var goalColor = colors[3];
+var goalColor = pickColor();
 var colorDisplay = document.querySelector("h1 span");
 var messageDisplay = document.getElementById("message");
 
@@ -31,4 +31,8 @@ function changeColors(color){
 	for(var i = 0; squares.length; i++){
 		squares[i].style.backgroundColor = color;
 	}
+}
+
+function pickColor(){
+	return colors[Math.floor(Math.random() * colors.length)];
 }
