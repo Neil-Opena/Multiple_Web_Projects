@@ -1,9 +1,12 @@
-var willDelete = false;
 
-//delete later
 //check off specific todos by clicking
 $("li").on("click",function(){
-	if(!willDelete){
-		$(this).toggleClass("strike");
-	} //else delete 
+	$(this).toggleClass("strike");
+});
+
+$("span").on("click",function(e){
+	$(this).parent().fadeOut(500, function(){
+		$(this).remove();
+	});
+	e.stopPropagation();
 });
