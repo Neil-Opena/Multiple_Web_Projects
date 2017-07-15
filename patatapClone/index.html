@@ -11,14 +11,24 @@
 				'#16a085','#27ae60','#2980b9','#8e44ad','#2c3e50',
 				'#f1c40f','#e67e22','#e74c3c','#ecf0f1','#95a5a6',
 				'#f39c12','#d35400','#c0392b','#bdc3c7','#7f8c8d'];
+		var circles = [];
 
 		function onKeyDown(e){
 			var x = Math.floor(Math.random() * width);
 			var y = Math.floor(Math.random() * height);
-			var colorNum = Math.floor(Math.random() * 20);
-			var circle = new Path.Circle(new Point(x, y), 50);
-			circle.fillColor = colors[colorNum];
+			var circle = new Path.Circle(new Point(x, y), 200);
+			circle.fillColor = colors[Math.floor(Math.random() * 20)];
+			circles.push(circle);
 		}
+
+		function onFrame(e){
+			for(var i = 0; i < circles.length; i++){
+				circles[i].fillColor.hue += 0.5;
+				circles[i].scale(.9);
+			}
+		}
+
+
 	</script>
 </head>
 <body>
