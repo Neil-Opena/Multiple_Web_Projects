@@ -5,16 +5,20 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="paper-full.min.js"></script>
 	<script type="text/paperscript" canvas="myCanvas">
-	<!-- Random Circles at random locations
-	var height = window.innerHeight;
-	var width = window.innerWidth;
-	for(var i = 0; i < 100; i++){
-		var x = Math.floor(Math.random() * width);
-		var y = Math.floor(Math.random() * height);
-		var rad = Math.floor(Math.random() * 80);
-		var circle = new Path.Circle(new Point(x, y), rad);
-		circle.fillColor = "steelblue";
-	} -->
+		var height = window.innerHeight;
+		var width = window.innerWidth;
+		var colors = ['#1abc9c','#2ecc71','#3498db','#9b59b6','#34495e',
+				'#16a085','#27ae60','#2980b9','#8e44ad','#2c3e50',
+				'#f1c40f','#e67e22','#e74c3c','#ecf0f1','#95a5a6',
+				'#f39c12','#d35400','#c0392b','#bdc3c7','#7f8c8d'];
+
+		function onKeyDown(e){
+			var x = Math.floor(Math.random() * width);
+			var y = Math.floor(Math.random() * height);
+			var colorNum = Math.floor(Math.random() * 20);
+			var circle = new Path.Circle(new Point(x, y), 50);
+			circle.fillColor = colors[colorNum];
+		}
 	</script>
 </head>
 <body>
