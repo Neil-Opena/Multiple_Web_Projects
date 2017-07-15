@@ -15,6 +15,10 @@ $("input[type='text']").on("keypress",function(e){
 	if(e.which === 13){
 		var content = $(this).val();
 		$(this).val("");
-		$("ul").append("<li><span>X</span> " + content + "</li>");
+		$("ul").append("<li><span><i class='fa fa-trash' aria-hidden='true'></i></span> " + content + "</li>");
 	}
+});
+
+$(".fa-pencil-square-o").on("click",function(){
+	$("input[type='text']").fadeToggle();
 });
